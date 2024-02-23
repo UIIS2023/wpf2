@@ -24,11 +24,13 @@ jobs:
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
-        with:
-          version: '16.x' # Specify MSBuild version if necessary, though setup-msbuild should automatically choose a compatible version.
 
       - name: Install SonarCloud scanner
         run: dotnet tool install --global dotnet-sonarscanner
+        shell: powershell
+
+      - name: Restore NuGet packages
+        run: dotnet restore WpfKnjizara.sln
         shell: powershell
 
       - name: Build and analyze
@@ -38,5 +40,5 @@ jobs:
         shell: powershell
         run: |
           dotnet-sonarscanner begin /k:"UIIS2023_wpf1" /o:"uiis2023" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          msbuild /t:Rebuild /p:Configuration=Release WpfKnjizara.sln # Ensure this path correctly points to your solution file.
+          msbuild /t:Rebuild /p:Configuration=Release WpfKnjizara.sln
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
