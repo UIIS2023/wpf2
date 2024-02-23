@@ -1,0 +1,33 @@
+﻿<Window x:Class="Knjizara.Forme.FrmKnjiga"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Knjizara.Forme"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Title="FrmKnjiga" Height="320" Width="470"
+        BorderBrush="DarkMagenta"
+        BorderThickness="7">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\HP\Desktop\WPFKnjizara\3.jpg" Stretch="Fill"></ImageBrush> 
+    </Window.Background> 
+
+    <Grid>
+       
+        <Label Content="Naslov:" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" Margin="120,45,0,0" VerticalAlignment="Top" />
+        <Label Content="Pisac:" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" Margin="120,75,0,0" VerticalAlignment="Top" />
+        <Label Content="Zanr:" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" Margin="120,105,0,0" VerticalAlignment="Top" />
+        <Label Content="Izdavac:" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" Margin="120,135,0,0" VerticalAlignment="Top" />
+        <Label Content="Racun:" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" Margin="120,165,0,0" VerticalAlignment="Top" />
+        <Label Content="Nabavka:" FontWeight="DemiBold" FontSize="14" HorizontalAlignment="Left" Margin="120,195,0,0" VerticalAlignment="Top" />
+       
+        <TextBox x:Name="txtNaslov" HorizontalAlignment="Left" Height="23" Margin="200,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbPisac" HorizontalAlignment="Left" Margin="200,80,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="Pisac" SelectedValuePath="PisacID"/>
+        <ComboBox x:Name="cbZanr" HorizontalAlignment="Left" Margin="200,110,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazivZanra" SelectedValuePath="ZanrID"/>
+        <ComboBox x:Name="cbIzdavac" HorizontalAlignment="Left" Margin="200,140,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="NazivIzdavaca" SelectedValuePath="IzdavacID"/>
+        <ComboBox x:Name="cbRacun" HorizontalAlignment="Left" Margin="200,170,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="CenaProdaje" SelectedValuePath="RacunID"/>
+        <ComboBox x:Name="cbNabavka" HorizontalAlignment="Left" Margin="200,200,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="CenaNabavke" SelectedValuePath="NabavkaID"/>
+        <Button x:Name="btnSacuvaj" Background="Thistle" Content="Sačuvaj" FontStyle="Italic" FontSize="14" HorizontalAlignment="Left" Margin="120,250,0,0" VerticalAlignment="Top" Width="75" Click="btnSacuvaj_Click"/>
+        <Button x:Name="btnOtkazi" Background="Thistle" Content="Otkaži" FontStyle="Italic" FontSize="14" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" Width="75" Click="btnOtkazi_Click"/>
+    </Grid>
+</Window>

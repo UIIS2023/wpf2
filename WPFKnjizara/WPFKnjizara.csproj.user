@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Forme\FrmIzdavac.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmKnjiga.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmKorisnik2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmKupac.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmNabavka.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmPisac.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmRacun.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forme\FrmZanr.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Forme\FrmIzdavac.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmKnjiga.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmKorisnik2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmKupac.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmNabavka.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmPisac.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmRacun.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forme\FrmZanr.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

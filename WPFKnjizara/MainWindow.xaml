@@ -1,0 +1,35 @@
+﻿<Window x:Class="Knjizara.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Knjizara"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Knjizara" Height="450" Width="760"
+        BorderBrush="DarkMagenta"
+        BorderThickness="7">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\HP\Desktop\WPFKnjizara\3.jpg" Stretch="Fill"></ImageBrush>
+    </Window.Background>
+
+ 
+    <Grid>
+        <DataGrid Name="dataGridCentralni" HorizontalAlignment="Center" VerticalAlignment="Center" Height="auto" Width="auto" IsReadOnly="True"
+                  CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single"/>
+        <StackPanel VerticalAlignment="Top" Cursor="Hand" Orientation="Horizontal">
+            <Button x:Name="btnKnjiga" Background="Thistle" Margin="10,0, 0, 0" Content="Knjiga" Height="40" VerticalAlignment="Top" Width="50" Click="btnKnjiga_Click" />
+            <Button x:Name="btnZanr" Background="Thistle" Margin="40,0,0,0" Content="Zanr" Height="40" VerticalAlignment="Top" Width="50" Click="btnZanr_Click"/>
+            <Button x:Name="btnPisac" Background="Thistle" Margin="40,0,0,0" Content="Pisac" Height="40" VerticalAlignment="Top" Width="50" Click="btnPisac_Click" />
+            <Button x:Name="btnIzdavac" Background="Thistle" Margin="40,0,0,0"  Content="Izdavac" Height="40" VerticalAlignment="Top" Width="50" Click="btnIzdavac_Click" />
+            <Button x:Name="btnKorisnik" Background="Thistle" Margin="40,0,0,0" Content="Korisnik" Height="40" VerticalAlignment="Top" Width="50" Click="btnKorisnik_Click" />
+            <Button x:Name="btnKupac" Background="Thistle" Margin="40,0,0,0"  Content="Kupac" Height="40" Width="50" Click="btnKupac_Click"/>
+            <Button x:Name="btnNabavka" Background="Thistle" Margin="40,0,0,0" Content="Nabavka" Height="40" VerticalAlignment="Top" Width="50" Click="btnNabavka_Click" />
+            <Button x:Name="btnRacun" Background="Thistle" Margin="40,0,0,0"  Content="Racun" Width="50" Click="btnRacun_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Cursor="Hand">
+            <Button x:Name="btnDodaj" Background="Thistle" Content="Dodaj" Width="120" Height="40" Margin="100, 0, 0, 0" Click="btnDodaj_Click" />
+            <Button x:Name="btnIzmeni" Background="Thistle"  Content="Izmeni" Width="120" Height="40" Margin="70, 0, 0, 0" Click="btnIzmeni_Click"  />
+            <Button x:Name="btnObrisi" Background="Thistle" Content="Obriši" Width="120" Height="40" Margin="70, 0, 0, 0" Click="btnObrisi_Click"  />
+        </StackPanel>
+    </Grid>
+</Window>
