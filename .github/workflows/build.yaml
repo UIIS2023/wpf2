@@ -5,32 +5,38 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   build:
     name: Build and analyze
     runs-on: windows-latest
+
     steps:
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: 'zulu'
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
-      # Add any other necessary setup steps here
+        with:
+          version: '16.x' # Specify MSBuild version if necessary, though setup-msbuild should automatically choose a compatible version.
+
       - name: Install SonarCloud scanner
-        run: |
-          dotnet tool install --global dotnet-sonarscanner
+        run: dotnet tool install --global dotnet-sonarscanner
         shell: powershell
+
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          dotnet-sonarscanner begin /k:"UIIS2023_wpf1" /o:"uiis2023" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          msbuild WpfKnjizara.sln /p:Configuration=Release /t:Rebuild
-          dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          dotnet-sonarscanner begin /k:"UIIS2023_wpf1" /o:"uiis2023" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          msbuild /t:Rebuild /p:Configuration=Release WpfKnjizara.sln # Ensure this path correctly points to your solution file.
+          dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
